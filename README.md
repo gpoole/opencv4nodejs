@@ -127,6 +127,16 @@ Setting up OpenCV on your own will require you to set an environment variable: *
 
 You can either install any of the OpenCV 3+ <a href="https://github.com/opencv/opencv/releases/"><b>releases</b></a> (note, this will come without contrib) or build OpenCV with or without <a href="https://github.com/opencv/opencv_contrib"><b>OpenCV contrib</b></a> from source on your own. On Linux and MacOSX the library should be installed under *usr/local* (which is the default).
 
+### On Mac OS
+
+If you manually install OpenCV on Mac OS with Homebrew, you will need to make sure to set *OPENCV_INCLUDE_DIR* and *OPENCV_LIB_DIR* before installing this package. You can use `brew --prefix opencv` to locate the installed location:
+
+```bash
+export OPENCV_INCLUDE_DIR=`brew --prefix opencv`/include
+export OPENCV_LIB_DIR=`brew --prefix opencv`/lib
+npm install --save opencv4nodejs
+```
+
 ### On Windows
 If you choose to set up OpenCV on your own you have to set the following environment variables before installing opencv4nodejs:
 - *OPENCV_INCLUDE_DIR* pointing to the directory with the subfolders *opencv* and *opencv2* containing the header files
